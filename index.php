@@ -37,11 +37,13 @@
             echo "Connected successfully";
 
             $stmt = $conn->prepare("INSERT INTO suggestions (name, email, suggestion) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $firstName, $email, $suggestion);
+            $stmt->bind_param(
+                "sss",
+                htmlspecialchars($firstName, ENT_QUOTES),
+                htmlspecialchars($email, ENT_QUOTES),
+                htmlspecialchars($suggestion, ENT_QUOTES)
+            );
 
-            // $firstName = 'Ryan';
-            // $email = 'zac@123.com';
-            // $suggestion = 'Bike rack';
             if (isset($_POST['submit'])) {
                 $stmt->execute();
 
