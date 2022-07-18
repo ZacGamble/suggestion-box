@@ -41,9 +41,9 @@
             $stmt = $conn->prepare("INSERT INTO suggestions (name, email, suggestion) VALUES (?, ?, ?)");
             $stmt->bind_param(
                 "sss",
-                htmlspecialchars($firstName, ENT_QUOTES),
-                htmlspecialchars($email, ENT_QUOTES),
-                htmlspecialchars($suggestion, ENT_QUOTES)
+                $firstName,
+                $email,
+                $suggestion
             );
 
             if (isset($_POST['submit'])) {
