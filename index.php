@@ -29,7 +29,7 @@
             $password = "password";
             $dbname = "suggestions";
 
-            // Create connection
+            // Create connection hello worlds
             $conn = new mysqli($servername, $username, $password, $dbname);
 
             // Check connection
