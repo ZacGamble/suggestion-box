@@ -49,14 +49,10 @@ include 'connection.php';
             ?>
 
             <form method="post" action="">
-                <label for="name">name (optional)</label>
-                <input type="text" name="name" class="mt-3"><br>
-                <label for="email">email (optional)</label>
-                <input type="email" name="email" class="mt-3"> <br>
-                <label for="suggestion" class="mt-3">Suggestion: </label> <br>
-                <textarea name="suggestion" id="suggestion" cols="50" rows="10" placeholder="Enter your suggestion..." class="mt-3">
-
-                    </textarea>
+                
+                <input type="text" name="name" class="mt-3" placeholder="Name.."><br>
+                <input type="email" name="email" class="mt-3" placeholder="Email..."> <br>
+                <textarea name="suggestion" id="suggestion" cols="50" rows="10" placeholder="Enter your suggestion..." class="mt-3"></textarea>
                 <br>
                 <button class="btn btn-success mt-3" type="submit" name="submit">Submit</button>
         </div>
