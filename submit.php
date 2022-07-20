@@ -1,8 +1,5 @@
 <?php
-
 require('connection.php');
-
-
 
 if (isset($_POST['submit'])) {
     $firstName = htmlspecialchars($_POST['name']);
@@ -15,18 +12,11 @@ if (isset($_POST['submit'])) {
         $email,
         $suggestion
     );
-    
-    
+
         $stmt->execute();
-        
         $conn->close();
     }
     
-
         if(!empty($_POST)){
-
-
         header("location:index.php");
         }
-        
-?>

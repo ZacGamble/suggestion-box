@@ -1,0 +1,33 @@
+header {
+    background-color: black;
+    padding: 1em;
+    max-height: 10em;
+}
+
+main {
+    background-image: url(https://pbs.twimg.com/media/FJUqUNKWUAM9kLo.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.form-input {
+    border-radius: 5px;
+    padding: .75em;
+}
+
+.header-text {
+    color: whitesmoke;
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgb(187, 149, 149);
+}
+
+.header-img {
+    margin: 1em;
+}
+
+#suggestions {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
