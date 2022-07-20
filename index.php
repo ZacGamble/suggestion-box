@@ -1,18 +1,6 @@
-<html lang="en">
-
-<?php
-include 'connection.php';
-include 'routes.php';
-?>
-
-<!-- We can use "include" to import chunks of HTML/PHP similar to how components are used in Vue -->
-<?php include 'head.php'; ?>
-
-
 <?php
 require('header.php');
 require('connection.php');
-
 ?>
 
 <body>
@@ -21,47 +9,7 @@ require('connection.php');
     </header>
     <main>
         <div class="p-5 d-flex align-items-center justify-content-center">
-
-            <?php
-
-
-
-            if (isset($_POST['submit'])) {
-                $firstName = htmlspecialchars($_POST['name']);
-                $email = htmlspecialchars($_POST['email']);
-                $suggestion = htmlspecialchars($_POST['suggestion']);
-                $stmt = $conn->prepare("INSERT INTO suggestions (name, email, suggestion) VALUES (?, ?, ?)");
-                $stmt->bind_param(
-                    "sss",
-                    $firstName,
-                    $email,
-                    $suggestion
-                );
-
-
-                $stmt->execute();
-
-                $conn->close();
-            }
-            $URI = $_SERVER['REQUEST_URI'];
-
-            if (!empty($_POST)) {
-
-
-                header("location:$URI");
-            }
-
-            ?>
-
-            <form method="post" action="">
-                <label for="name">name (optional)</label>
-                <input type="text" name="name" class="mt-3"><br>
-                <label for="email">email (optional)</label>
-                <input type="email" name="email" class="mt-3"> <br>
-                <label for="suggestion" class="mt-3">Suggestion: </label> <br>
-                <textarea name="suggestion" id="suggestion" cols="50" rows="10" placeholder="Enter your suggestion..." class="mt-3">
-                    </textarea>
-
+            <form method="post" action="submit.php">
                 <input type="text" name="name" class="mt-3" placeholder="Name.."><br>
                 <input type="email" name="email" class="mt-3" placeholder="Email..."> <br>
                 <textarea name="suggestion" id="suggestion" cols="50" rows="10" placeholder="Enter your suggestion..." class="mt-3"></textarea>
@@ -87,7 +35,6 @@ require('connection.php');
             </form>
         </div>
     </main>
-
 </body>
 
 </html>
