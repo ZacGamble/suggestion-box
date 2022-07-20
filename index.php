@@ -21,8 +21,6 @@ include 'connection.php';
 
             <?php
 
-
-
             if (isset($_POST['submit'])) {
                 $firstName = htmlspecialchars($_POST['name']);
                 $email = htmlspecialchars($_POST['email']);
